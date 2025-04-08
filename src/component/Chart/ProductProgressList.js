@@ -16,7 +16,7 @@ const data = [
 const ProductProgressList = () => {
   return (
     <div className=" ">
-      {data?.length > 0 ? (
+      {data?.length < 0 ? (
         <div className="overflow-y-auto grid grid-rows-7 ">
           <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
             <div className="flex justify-between">

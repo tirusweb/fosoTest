@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const DoughnutChart = () => {
-  const series = [0, 0, 0];
+  const series = [5, 6, 5];
   const total = series.reduce((a, b) => a + b, 0);
   const isEmpty = total === 0;
   const displaySeries = isEmpty ? [1, 1, 1] : series;

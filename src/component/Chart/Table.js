@@ -73,7 +73,7 @@ const TableList = () => {
               </th>
             </tr>
           </thead>
-          {fakeApi?.length < 0 ? (
+          {fakeApi?.length > 0 ? (
             <tbody>
               {fakeApi.map((list, index) => (
                 <tr

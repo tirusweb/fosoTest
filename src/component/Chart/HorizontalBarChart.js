@@ -15,7 +15,7 @@ const HorizontalBarChart = () => {
     },
     series: [
       {
-        //data: [3100, 3000, 3190, 2900, 2900],
+        data: [3100, 3000, 3190, 2900, 2900],
       },
     ],
     plotOptions: {
@@ -66,9 +66,9 @@ const HorizontalBarChart = () => {
     },
     yaxis: {
       labels: {
-        show: false,
+        show: true,
         align: "left",
-        width: 150, 
+        maxWidth: 80, 
         style: {
           colors: "#9ca3af",
           fontSize: "12px",
@@ -76,7 +76,7 @@ const HorizontalBarChart = () => {
           fontWeight: 400,
           whiteSpace: "normal", 
         },
-        offsetX: 0,
+        offsetX: -20,
        
       },
     },
@@ -113,7 +113,7 @@ const HorizontalBarChart = () => {
         type="bar"
         height={316}
       />
-       <div className="absolute font-lexend-deca left-[2px] bottom-[6px] text-xs text-gray-500  origin-bottom-left">
+       <div className="absolute font-lexend-deca left-[6px] bottom-[30px] text-xs text-gray-500  origin-bottom-left">
         số lượng
       </div>
       <div className="absolute font-lexend-deca left-[4px] top-[0px] text-xs text-gray-500  origin-bottom-left">
