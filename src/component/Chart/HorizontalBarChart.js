@@ -15,7 +15,7 @@ const HorizontalBarChart = () => {
     },
     series: [
       {
-        data: [3100, 3000, 3190, 2900, 2900],
+        //data: [3100, 3000, 3190, 2900, 2900],
       },
     ],
     plotOptions: {
@@ -53,20 +53,22 @@ const HorizontalBarChart = () => {
         show: true,
       },
       labels: {
+        show: true,
         style: {
           colors: "#9ca3af",
           fontSize: "12px",
           fontFamily: "Lexend Deca, sans-serif",
           fontWeight: 400,
         },
-        offsetX: -2,
+        offsetX: 0,
       },
       crosshairs: { show: true },
     },
     yaxis: {
       labels: {
+        show: false,
         align: "left",
-        maxWidth: 100, 
+        width: 150, 
         style: {
           colors: "#9ca3af",
           fontSize: "12px",
@@ -74,7 +76,7 @@ const HorizontalBarChart = () => {
           fontWeight: 400,
           whiteSpace: "normal", 
         },
-        offsetX: -18,
+        offsetX: 0,
        
       },
     },
@@ -104,13 +106,19 @@ const HorizontalBarChart = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className=" relative w-full">
       <ApexCharts
         options={chartOptions}
         series={chartOptions.series}
         type="bar"
         height={316}
       />
+       <div className="absolute font-lexend-deca left-[2px] bottom-[6px] text-xs text-gray-500  origin-bottom-left">
+        số lượng
+      </div>
+      <div className="absolute font-lexend-deca left-[4px] top-[0px] text-xs text-gray-500  origin-bottom-left">
+        Khách hàng
+      </div>
     </div>
   );
 };

@@ -2,10 +2,14 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const DoughnutChart = () => {
-  const series = [5, 6, 5];
+  const series = [0, 0, 0];
   const total = series.reduce((a, b) => a + b, 0);
-
+  const isEmpty = total === 0;
+  const displaySeries = isEmpty ? [1, 1, 1] : series;
   const percentages = series.map((value) => ((value / total) * 100).toFixed(0));
+  const displayColors = isEmpty
+    ? ["#E5E7EB", "#E5E7EB", "#E5E7EB"]
+    : ["#FF8F0D", "#0375F3", "#1FC583"];
 
   const chartOptions = {
     chart: {
@@ -13,9 +17,9 @@ const DoughnutChart = () => {
       width: 286,
       type: "donut",
     },
-    series,
+    series: displaySeries,
     labels: ["Chưa hoàn thành", "Đang sản xuất", "Hoàn thành"],
-    colors: ["#FF8F0D", "#0375F3", "#1FC583"],
+    colors: displayColors,
     plotOptions: {
       pie: {
         donut: {
@@ -87,7 +91,7 @@ const DoughnutChart = () => {
         fillColors: ["transparent", "transparent", "transparent"],
       },
       formatter: function (seriesName, opts) {
-        const value = opts.w.globals.series[opts.seriesIndex];
+        const value = isEmpty ? 0 : opts.w.globals.series[opts.seriesIndex];
         const colors = ["#FF8F0D", "#0375F3", "#1FC583"];
         const color = colors[opts.seriesIndex];
 
@@ -115,73 +119,76 @@ const DoughnutChart = () => {
         height={320}
         width={320}
       />
+      {!isEmpty && (
+        <div>
+          <div className="absolute left-[20px] top-[2px] space-y-1">
+            <div className="flex items-center">
+              <span className="text-[12px] mb-4 py-[2px] px-[16px] rounded-[40px] font-lexend-deca font-normal text-white bg-[#1FC583]">
+                {percentages[2]}%
+              </span>
+              <svg
+                width="50"
+                height="24"
+                viewBox="0 0 101 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M100 23L52.6522 1H0.999996"
+                  stroke="#1FC583"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+          </div>
 
-      <div className="absolute left-[20px] top-[2px] space-y-1">
-        <div className="flex items-center">
-          <span className="text-[12px] mb-4 py-[2px] px-[16px] rounded-[40px] font-lexend-deca font-normal text-white bg-[#1FC583]">
-            {percentages[2]}%
-          </span>
-          <svg
-            width="50"
-            height="24"
-            viewBox="0 0 101 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M100 23L52.6522 1H0.999996"
-              stroke="#1FC583"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-      </div>
+          <div className="absolute right-[50px] top-[6px] ">
+            <div className=" flex items-center">
+              {" "}
+              <svg
+                width="50"
+                height="24"
+                viewBox="0 0 101 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 23L48.3478 1H100"
+                  stroke="#FF8F0D"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span className="text-[12px] mb-4 py-[2px] px-[16px] rounded-[40px] font-lexend-deca font-normal text-white bg-[#FF8F0D]">
+                {percentages[0]}%
+              </span>
+            </div>
+          </div>
 
-      <div className="absolute right-[50px] top-[6px] ">
-        <div className=" flex items-center">
-          {" "}
-          <svg
-            width="50"
-            height="24"
-            viewBox="0 0 101 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 23L48.3478 1H100"
-              stroke="#FF8F0D"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <span className="text-[12px] mb-4 py-[2px] px-[16px] rounded-[40px] font-lexend-deca font-normal text-white bg-[#FF8F0D]">
-            {percentages[0]}%
-          </span>
+          <div className="absolute bottom-[-10px] right-[40px] flex items-center space-x-1">
+            <div className="flex items-center">
+              <svg
+                width="70"
+                height="24"
+                viewBox="0 0 101 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L48.3478 23H100"
+                  stroke="#0375F3"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span className="text-[12px] mt-4 py-[2px] px-[16px] rounded-[40px] font-lexend-deca font-normal text-white bg-[#0375F3]">
+                {percentages[1]}%
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-[-10px] right-[40px] flex items-center space-x-1">
-        <div className="flex items-center">
-          <svg
-            width="70"
-            height="24"
-            viewBox="0 0 101 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 1L48.3478 23H100"
-              stroke="#0375F3"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <span className="text-[12px] mt-4 py-[2px] px-[16px] rounded-[40px] font-lexend-deca font-normal text-white bg-[#0375F3]">
-            {percentages[1]}%
-          </span>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

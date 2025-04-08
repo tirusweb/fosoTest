@@ -55,10 +55,10 @@ const HomeDashboard = () => {
               {" "}
               Top Sản Phẩm Sản Xuất Nhiều Nhất
             </p>
-            <ButtonDate onChange={''} />
+            <ButtonDate onChange={""} />
           </div>
           <div className=" grid grid-cols-5 gap-[24px]">
-            {data.map((list, index) => (
+            {/* {data.map((list, index) => (
               <div
                 key={index}
                 className=" cursor-pointer hover:opacity-80 relative col-span-1 p-[24px] shadow-md flex items-center justify-between w-full h-[116px] rounded-[16px] bg-white"
@@ -167,7 +167,57 @@ const HomeDashboard = () => {
                   </span>
                 </div>
               </div>
-            ))}
+            ))} */}
+            <div className=" cursor-pointer hover:opacity-80 relative col-span-1 p-[24px] shadow-md flex items-center justify-between w-full h-[116px] rounded-[16px] bg-white">
+              <div>
+                <h3 className=" text-primary text-[32px] font-bold font-barlow  ">
+                  0
+                </h3>
+                <span className=" text-secondary text-[14px] font-normal font-lexend-deca ">
+                  Chưa có sản phẩm nào
+                </span>
+              </div>
+            </div>
+            <div className=" cursor-pointer hover:opacity-80 relative col-span-1 p-[24px] shadow-md flex items-center justify-between w-full h-[116px] rounded-[16px] bg-white">
+              <div>
+                <h3 className=" text-primary text-[32px] font-bold font-barlow  ">
+                  0
+                </h3>
+                <span className=" text-secondary text-[14px] font-normal font-lexend-deca ">
+                  Chưa có sản phẩm nào
+                </span>
+              </div>
+            </div>
+            <div className=" cursor-pointer hover:opacity-80 relative col-span-1 p-[24px] shadow-md flex items-center justify-between w-full h-[116px] rounded-[16px] bg-white">
+              <div>
+                <h3 className=" text-primary text-[32px] font-bold font-barlow  ">
+                  0
+                </h3>
+                <span className=" text-secondary text-[14px] font-normal font-lexend-deca ">
+                  Chưa có sản phẩm nào
+                </span>
+              </div>
+            </div>
+            <div className=" cursor-pointer hover:opacity-80 relative col-span-1 p-[24px] shadow-md flex items-center justify-between w-full h-[116px] rounded-[16px] bg-white">
+              <div>
+                <h3 className=" text-primary text-[32px] font-bold font-barlow  ">
+                  0
+                </h3>
+                <span className=" text-secondary text-[14px] font-normal font-lexend-deca ">
+                  Chưa có sản phẩm nào
+                </span>
+              </div>
+            </div>
+            <div className=" cursor-pointer hover:opacity-80 relative col-span-1 p-[24px] shadow-md flex items-center justify-between w-full h-[116px] rounded-[16px] bg-white">
+              <div>
+                <h3 className=" text-primary text-[32px] font-bold font-barlow  ">
+                  0
+                </h3>
+                <span className=" text-secondary text-[14px] font-normal font-lexend-deca ">
+                  Chưa có sản phẩm nào
+                </span>
+              </div>
+            </div>
           </div>
           <div className=" grid grid-cols-2 gap-[24px]">
             <div className=" col-span-1 bg-white shadow-md rounded-[16px] p-[24px]">
@@ -176,7 +226,7 @@ const HomeDashboard = () => {
                   {" "}
                   Kế Hoạch Sản Xuất
                 </p>
-                <ButtonDate onChange={''} />
+                <ButtonDate onChange={""} />
               </div>
               <div className=" mt-4">
                 <MultipleBarChart />
@@ -188,7 +238,7 @@ const HomeDashboard = () => {
                   {" "}
                   Top 5 Khách Hàng Có Sản Lượng Nhiều Nhất
                 </p>
-                <ButtonDate onChange={''} />
+                <ButtonDate onChange={""} />
               </div>
               <div className=" mt-4">
                 <HorizontalBarChart />

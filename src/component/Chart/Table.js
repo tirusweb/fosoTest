@@ -1,4 +1,5 @@
 import React from "react";
+import picNull from "../../image/ic_content.svg";
 
 const TableList = () => {
   const fakeApi = [
@@ -6,7 +7,7 @@ const TableList = () => {
       id: 1,
       name: "Chỉ cotton",
       code: "NVL_000014",
-      status : "none",
+      status: "none",
       unit: "Cuộn",
       quantity: 8,
       image: "https://i.ibb.co/fVQdfQTk/Capture.png",
@@ -15,7 +16,7 @@ const TableList = () => {
       id: 2,
       name: "Vải lụa",
       code: "NVL_000024",
-      status : "none",
+      status: "none",
       unit: "Mét",
       quantity: 8,
       image: "https://i.ibb.co/fVQdfQTk/Capture.png",
@@ -24,7 +25,7 @@ const TableList = () => {
       id: 3,
       name: "Vải lót",
       code: "NVL_000024",
-      status : "none",
+      status: "none",
       unit: "Mét",
       quantity: 8,
       image: "https://i.ibb.co/fVQdfQTk/Capture.png",
@@ -33,7 +34,7 @@ const TableList = () => {
       id: 4,
       name: "Vải chống thấm",
       code: "NVL_000024",
-      status : "none",
+      status: "none",
       unit: "Mét",
       quantity: 8,
       image: "https://i.ibb.co/fVQdfQTk/Capture.png",
@@ -42,12 +43,11 @@ const TableList = () => {
       id: 5,
       name: "Vãi nỉ",
       code: "NVL_000024",
-      status : "none",
+      status: "none",
       unit: "Mét",
       quantity: 8,
       image: "https://i.ibb.co/fVQdfQTk/Capture.png",
     },
-    
   ];
 
   return (
@@ -73,16 +73,23 @@ const TableList = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
-            {fakeApi &&
-              fakeApi.map((list, index) => (
-                <tr key={list.id} className="cursor-pointer  bg-white border-b border-[#F3F3F4]">
+          {fakeApi?.length < 0 ? (
+            <tbody>
+              {fakeApi.map((list, index) => (
+                <tr
+                  key={list.id}
+                  className="cursor-pointer  bg-white border-b border-[#F3F3F4]"
+                >
                   <td className="py-[8px] font-lexend-deca font-semibold text-[14px] text-center">
                     {index + 1}
                   </td>
                   <td colSpan={2} className="  text-left py-[8px]">
                     <div className=" flex items-start justify-start">
-                      <img className=" w-[32px] h-[32px] rounded-[4px] " src={list.image} alt="ảnh sản phẩm"/>
+                      <img
+                        className=" w-[32px] h-[32px] rounded-[4px] "
+                        src={list.image}
+                        alt="ảnh sản phẩm"
+                      />
                       <div className=" ml-2 font-lexend-deca ">
                         <p className=" font-semibold text-[12px]">
                           {" "}
@@ -106,7 +113,18 @@ const TableList = () => {
                   </td>
                 </tr>
               ))}
-          </tbody>
+            </tbody>
+          ) : (
+            <tr className="cursor-pointer  bg-white border-b border-[#F3F3F4]">
+              <td colSpan={5} className=" w-full pl-[20%] flex-row  items-center ">
+                <img className=" w-[250px] h-[250px]   " src={picNull} />
+                <p className=" font-medium pr-8 font-lexend-deca text-center text-[24px] text-[#52575E]">
+                  {" "}
+                  chưa có dữ liệu
+                </p>
+              </td>
+            </tr>
+          )}
         </table>
       </div>
     </>

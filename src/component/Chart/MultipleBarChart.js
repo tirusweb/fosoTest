@@ -37,6 +37,7 @@ const MultipleBarChart = () => {
         "Quần jogger",
       ],
       labels: {
+        show: false,
         style: {
           colors: "#9295A4",
           fontSize: "12px",
@@ -73,14 +74,14 @@ const MultipleBarChart = () => {
   };
 
   const series = [
-    {
-      name: "Kế hoạch",
-      data: [60, 100, 80, 70, 88],
-    },
-    {
-      name: "Thực hiện",
-      data: [40, 60, 20, 44, 58],
-    },
+    // {
+    //   name: "Kế hoạch",
+    //   data: [60, 100, 80, 70, 88],
+    // },
+    // {
+    //   name: "Thực hiện",
+    //   data: [40, 60, 20, 44, 58],
+    // },
   ];
 
   return (
@@ -99,11 +100,11 @@ const MultipleBarChart = () => {
           </span>
         </div>
       </div>
-      <div className="absolute font-lexend-deca left-[2px] bottom-[24px] text-xs text-gray-500  origin-bottom-left">
+      <div className="absolute font-lexend-deca left-[2px] bottom-[6px] text-xs text-gray-500  origin-bottom-left">
         Mặt hàng
       </div>
-      <div className="absolute font-lexend-deca left-[40px] top-[0px] text-xs text-gray-500  origin-bottom-left">
-        Cái
+      <div className="absolute font-lexend-deca left-[30px] top-[0px] text-xs text-gray-500  origin-bottom-left">
+        Đơn vị
       </div>
       <Chart options={options} series={series} type="bar" height={300} />
     </div>

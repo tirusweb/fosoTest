@@ -8,36 +8,158 @@ const data = [
   { name: "Đầm maxi", quantity: 876, totalQuantity: 973 },
   { name: "Áo hoodie", quantity: 765, totalQuantity: 4100 },
   { name: "Áo khoác bomber", quantity: 543, totalQuantity: 2263 },
-
-].map(item => ({
+].map((item) => ({
   ...item,
   percent: ((item.quantity / item.totalQuantity) * 100).toFixed(1),
 }));
 
 const ProductProgressList = () => {
   return (
-    <div className="overflow-y-auto grid grid-rows-7 ">
-      {data.map((item, index) => (
-        <div key={index} className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] "> 
-          <div className="flex justify-between">
-            <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
-              {item.name}
-            </span>
-            <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
-              {item.quantity} cái{" "}
-              <span className="text-[#637381] font-normal">
-                ({item.percent}%)
+    <div className=" ">
+      {data?.length > 0 ? (
+        <div className="overflow-y-auto grid grid-rows-7 ">
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
               </span>
-            </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
           </div>
-          <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
-            <div
-              className="bg-emerald-500 h-2 rounded-full"
-              style={{ width: `${item.percent}%` }}
-            />
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
+              </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
           </div>
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
+              </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
+          </div>
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
+              </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
+          </div>
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
+              </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
+          </div>
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
+              </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
+          </div>
+          <div className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] ">
+            <div className="flex justify-between">
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                Chưa có mặt hàng
+              </span>
+              <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                <span className="text-[#637381] font-normal"></span>
+              </span>
+            </div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+              <div
+                className="bg-[#919EAB1F] h-2 rounded-full"
+                // style={{ width: `${item.percent}%` }}
+              />
+            </div>
+          </div>
+
         </div>
-      ))}
+      ) : (
+        <div className="overflow-y-auto grid grid-rows-7">
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className=" row-span-1 overflow-y-auto h-[50px] gap-[8px] "
+            >
+              <div className="flex justify-between">
+                <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                  {item.name}
+                </span>
+                <span className="font-lexend-deca text-[14px] font-medium text-[#1C252E]">
+                  {item.quantity} cái{" "}
+                  <span className="text-[#637381] font-normal">
+                    ({item.percent}%)
+                  </span>
+                </span>
+              </div>
+              <div className="w-full bg-gray-100 rounded-full h-2 mt-1">
+                <div
+                  className="bg-emerald-500 h-2 rounded-full"
+                  style={{ width: `${item.percent}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
